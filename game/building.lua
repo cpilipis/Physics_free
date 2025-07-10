@@ -32,12 +32,12 @@ end
 end
 
 function love.mousepressed(x, y, button)
-if button == "r" then
+if button == 2 then
 builder.blocks = builder.blocks + 1
 objects.bodys.built[builder.blocks] = love.physics.newBody(world, x, y, "static")
 objects.fixtures.builtfixs[builder.blocks] = love.physics.newFixture(objects.bodys.built[builder.blocks], builder.types[builder.selected], 1)
 builder.actshapes[builder.blocks] = builder.selected
-elseif button == "l" then
+elseif button == 1 then
 builder.blocks = builder.blocks + 1
 objects.bodys.built[builder.blocks] = love.physics.newBody(world, x, y, "dynamic")
 objects.fixtures.builtfixs[builder.blocks] = love.physics.newFixture(objects.bodys.built[builder.blocks], builder.types[builder.selected], 1)
